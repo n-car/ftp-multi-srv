@@ -2,6 +2,9 @@
 
 # ftp-multi-srv
 
+[![npm version](https://img.shields.io/npm/v/ftp-multi-srv.svg?logo=npm)](https://www.npmjs.com/package/ftp-multi-srv)
+[![npm downloads](https://img.shields.io/npm/dm/ftp-multi-srv.svg)](https://www.npmjs.com/package/ftp-multi-srv)
+
 Multi-share, permission-aware, lightweight FTP(S) server for Node.js built on top of `@n-car/ftp-srv`.
 
 </div>

@@ -1,0 +1,53 @@
+{
+  "name": "ftp-multi-srv",
+  "version": "1.0.0",
+  "description": "Configurable multi-share FTP/FTPS server (anonymous + users, per-share permissions, quotas, i18n)",
+  "main": "src/main.js",
+  "types": "index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node bin/ftp-multi-srv.js",
+    "dev": "nodemon bin/ftp-multi-srv.js --watch",
+    "generate-cert": "node scripts/generate-cert.js",
+    "watch": "node bin/ftp-multi-srv.js --watch"
+  },
+  "bin": {
+    "ftp-multi-srv": "bin/ftp-multi-srv.js"
+  },
+  "keywords": [
+    "ftp",
+    "ftps",
+    "ftp-server",
+    "multi-share",
+    "shares",
+    "permissions",
+    "quota",
+    "anonymous",
+    "tls",
+    "i18n"
+  ],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "src/",
+    "bin/",
+    "index.d.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "scripts/generate-cert.js",
+    "examples/config/server.json",
+    "examples/config/shares.json",
+    "examples/config/users.json",
+    "examples/config/messages.it.json",
+    "examples/EXAMPLES.md"
+  ],
+  "dependencies": {
+  "@n-car/ftp-srv": "github:n-car/ftp-srv",
+    "ajv": "^8.17.1",
+    "chokidar": "^3.6.0",
+    "selfsigned": "^2.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

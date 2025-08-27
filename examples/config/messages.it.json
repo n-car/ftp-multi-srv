@@ -1,0 +1,16 @@
+{
+  "ERR_ANON_DISABLED": "Accesso anonimo disabilitato",
+  "ERR_INVALID_CREDENTIALS": "Credenziali non valide",
+  "ERR_DIR_NOT_FOUND": "Directory non trovata",
+  "ERR_ACCESS_DENIED": "Accesso negato",
+  "ERR_DIR_NOT_READABLE": "Directory non leggibile",
+  "ERR_FILE_NOT_FOUND": "File non trovato",
+  "ERR_INVALID_PATH": "Percorso non valido",
+  "ERR_PERMISSION_DENIED_RO": "Permesso negato (read-only)",
+  "ERR_SHARE_QUOTA_EXCEEDED": "Quota share esaurita",
+  "ERR_UPLOAD_LIMIT_EXCEEDED": "File supera limite upload",
+  "ERR_CREATE_DIR_ROOT": "Creare directory dentro una share esistente",
+  "ERR_RENAME_CROSS_SHARE": "Rinomina supportata solo all'interno della stessa share",
+  "ERR_CHMOD_UNSUPPORTED": "CHMOD non supportato in file system virtuale",
+  "ERR_DELETE_FAILED": "Impossibile eliminare"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "pub",
+    "path": "./data/public",
+    "public": true,
+    "anonymousPermission": "r",
+    "maxSizeBytes": 52428800,
+    "users": { "uploader": "rw" }
+  },
+  {
+    "name": "bigshare",
+    "path": "./data/bigshare",
+    "public": false,
+    "maxSizeBytes": 157286400,
+    "users": { "uploader": "rw" }
+  }
+]

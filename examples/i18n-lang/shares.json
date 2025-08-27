@@ -1,0 +1,9 @@
+[
+  {
+    "name": "documenti",
+    "path": "./data/documenti",
+    "public": false,
+    "maxSizeBytes": null,
+    "users": { "utente": "rw" }
+  }
+]

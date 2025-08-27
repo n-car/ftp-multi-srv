@@ -1,0 +1,16 @@
+[
+  {
+    "name": "team",
+    "path": "./data/team",
+    "public": false,
+    "maxSizeBytes": null,
+    "users": { "alice": "rw", "bob": "r" }
+  },
+  {
+    "name": "exchange",
+    "path": "./data/exchange",
+    "public": false,
+    "maxSizeBytes": null,
+    "users": { "alice": "rw", "bob": "rw" }
+  }
+]

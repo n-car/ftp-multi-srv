@@ -1,0 +1,10 @@
+[
+  {
+    "name": "pub",
+    "path": "./data/public",
+    "public": true,
+    "anonymousPermission": "r",
+    "maxSizeBytes": null,
+    "users": { }
+  }
+]

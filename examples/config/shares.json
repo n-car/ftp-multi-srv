@@ -1,0 +1,23 @@
+[
+  {
+    "name": "pub",
+    "path": "./data/public",
+    "public": true,
+    "anonymousPermission": "rw",
+    "maxSizeBytes": null,
+    "users": {
+      "user1": "rw",
+      "user2": "rw"
+    }
+  },
+  {
+    "name": "private",
+    "path": "./data/private",
+    "public": false,
+    "maxSizeBytes": null,
+    "users": {
+      "user1": "rw",
+      "user2": "r"
+    }
+  }
+]

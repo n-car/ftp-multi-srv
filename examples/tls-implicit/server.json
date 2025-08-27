@@ -1,0 +1,9 @@
+{
+  "host": "0.0.0.0",
+  "port": 990,
+  "anonymous": { "enabled": false },
+  "pasv": { "enabled": true, "url": null, "min": 50200, "max": 50210 },
+  "tls": { "enabled": true, "mode": "implicit", "cert": "./certs/cert.pem", "key": "./certs/key.pem" },
+  "locale": "en",
+  "fallbackLocale": "en"
+}

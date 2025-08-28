@@ -1,9 +1,9 @@
 # Changelog
 
-## Unreleased
+## 1.0.1
 
-- Fix: LANG command handler no longer references undefined `MESSAGES`; now validates against the preloaded locale list.
-- Docs: Clarify i18n availability — only `en` is built-in; `it` is provided under `examples/config/messages.it.json` with copy instructions.
+- Fix: LANG command handler validates against preloaded locales (no undefined reference).
+- Docs: Clarify i18n availability — built-in `en`; Italian example under `examples/config/messages.it.json` with copy instructions.
 
 ## 1.0.0
 
@@ -11,5 +11,4 @@
 - Entry point: `src/main.js`.
 - All library files are now in `src/`.
 - Documentation and structure simplified.
-# Changelog
 

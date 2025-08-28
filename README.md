@@ -11,8 +11,8 @@ Multi-share, permission-aware, lightweight FTP(S) server for Node.js built on to
 
 ## 1. Why this project?
 You need a small, configurable FTP / FTPS server you can embed or run via CLI, with:
-* Multiple logical shares (each a real filesystem path) exposed as top‑level directories
-* Anonymous + named users, per-user or anonymous read (r) / read‑write (rw) permissions
+* Multiple logical shares (each a real filesystem path) exposed as top-level directories
+* Anonymous + named users, per-user or anonymous read (r) / read-write (rw) permissions
 * Simple JSON configuration (users, shares, server) + hot reload (`--watch`)
 * Optional quotas and upload size limits
 * Virtual status file exposing permissions & usage
@@ -22,7 +22,7 @@ You need a small, configurable FTP / FTPS server you can embed or run via CLI, w
 
 ## 2. Features (at a glance)
 * Multi-share virtual root
-* Read / read‑write permissions (`r`, `rw`) per user and anonymous
+* Read / read-write permissions (`r`, `rw`) per user and anonymous
 * Anonymous enable/disable toggle
 * Share quota (`maxSizeBytes`) + per-upload size limit (`limits.maxUploadBytes`)
 * Virtual `.status` file (root + each share)
@@ -30,7 +30,7 @@ You need a small, configurable FTP / FTPS server you can embed or run via CLI, w
 * Passive mode with configurable port range & external URL
 * Hot configuration reload (`--watch`)
 * i18n + dynamic `LANG <code>` command
-* JSON schema validation (Ajv) – optional
+* JSON schema validation (Ajv) (optional)
 * TypeScript definitions included
 
 ## 3. Install
@@ -73,7 +73,7 @@ const { ftpServer } = createFtpServer({ users, shares, serverConf });
 ftpServer.listen().then(() => console.log('FTP server listening')); 
 ```
 
-Disable built‑in validation (if you validate beforehand):
+Disable built-in validation (if you validate beforehand):
 ```js
 createFtpServer({ users, shares, serverConf, validate: false });
 ```
@@ -110,7 +110,7 @@ Key | Type | Default | Notes
 `pasv.min` | number | `50000` | Start of passive port range
 `pasv.max` | number | `50100` | End of passive port range
 `tls.enabled` | boolean | `false` | Enable FTPS
-`tls.mode` | `explicit`\|`implicit` | `explicit` | AUTH TLS upgrade vs implicit FTPS
+`tls.mode` | `explicit`|`implicit` | `explicit` | AUTH TLS upgrade vs implicit FTPS
 `tls.cert` | string | `./certs/cert.pem` | Certificate path
 `tls.key` | string | `./certs/key.pem` | Private key path
 `locale` | string | `en` | Default locale
@@ -146,7 +146,7 @@ Key | Type | Default | Description
 `name` | string | (required) | Directory name at FTP root
 `path` | string | (required) | Filesystem path (created if missing)
 `public` | boolean | `false` | Visible to anonymous
-`anonymousPermission` | `r`\|`rw` | `r` | Permission granted to anonymous (if `public=true`)
+`anonymousPermission` | `r`|`rw` | `r` | Permission granted to anonymous (if `public=true`)
 `users` | object | `{}` | `username -> r|rw`
 `maxSizeBytes` | number/null | `null` | Total quota for share
 
@@ -165,7 +165,7 @@ Name | Default | Purpose
 `FTP_SERVER_CONF` | `./config/server.json` | Server config path
 
 ## 8. Quotas & Limits
-* `limits.maxUploadBytes`: per-upload cap – enforced from start
+* `limits.maxUploadBytes`: per-upload cap - enforced from start
 * `share.maxSizeBytes`: aggregate size quota (recursive). Calculated and cached (30s). Cache invalidated after each upload closes.
 If quota exceeded, upload is rejected.
 
@@ -196,7 +196,7 @@ Implicit | TLS from the first byte (use dedicated port)
 If certificate or key read fails, TLS is disabled (server continues).
 
 ## 12. Passive Mode (PASV)
-Configure a narrow port range (`pasv.min`–`pasv.max`) and ensure firewall/NAT forwards it. Set `pasv.url` when behind NAT so clients receive the correct external address.
+Configure a narrow port range (`pasv.min`-`pasv.max`) and ensure firewall/NAT forwards it. Set `pasv.url` when behind NAT so clients receive the correct external address.
 
 ## 13. Hot Reload
 Run with `--watch` to automatically reload when any of the three JSON config files change. On validation error the previous server instance stays active.
@@ -231,29 +231,12 @@ Ajv schema validation runs at startup / reload. Disable by passing `validate: fa
 ## 17. Minimal Config Set
 ```jsonc
 // server.json
-{ "host": "0.0.0.0", "port": 2121, "anonymous": { "enabled": true } }
-```
-```jsonc
+{ "host": "0.0.0.0", "port": 2121, "anonymous": { "enabled": false } }
+
 // users.json
-[ { "username": "alice", "password": "alicepw" } ]
-```
-```jsonc
+[{ "username": "alice", "password": "alicepw" }]
+
 // shares.json
-[ { "name": "public", "path": "./data/public", "public": true, "anonymousPermission": "r" } ]
+[{ "name": "public", "path": "./data/public", "public": true, "anonymousPermission": "r" }]
 ```
 
-## 18. Changelog
-See `CHANGELOG.md` (starting at 1.0.0).
-
-## 19. License
-MIT
-
-## 20. Status & Roadmap
-Stable. Future ideas (PRs welcome):
-* Pluggable auth backends
-* Optional structured logging integration
-* More locales
-* Configurable retention policy for size cache
-
----
-Enjoy! Contributions & feedback welcome.

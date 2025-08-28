@@ -18,7 +18,7 @@ You need a small, configurable FTP / FTPS server you can embed or run via CLI, w
 * Virtual status file exposing permissions & usage
 * Explicit or implicit TLS
 * Passive mode (PASV) range + public address support
-* Basic i18n (currently `en`, `it`) and runtime language switch via `LANG`
+* Basic i18n (built-in `en`; `it` provided in examples) and runtime language switch via `LANG`
 
 ## 2. Features (at a glance)
 * Multi-share virtual root
@@ -175,8 +175,14 @@ If quota exceeded, upload is rejected.
 * Read-only, virtual; not stored on disk.
 
 ## 10. Internationalization (i18n)
-* Built-in locales: `en`, `it`
+* Built-in locales: `en`
+* Italian is provided as an example at `examples/config/messages.it.json`. To enable it at runtime, copy it next to your configs as `./config/messages.it.json`.
 * Add more by placing `messages.<locale>.json` in `config/`
+* Quick enable for Italian (from project root):
+  ```bash
+  mkdir -p config
+  cp examples/config/messages.it.json config/
+  ```
 * Connection greets with available locales
 * Client can issue `LANG <code>`; unsupported -> `504` reply
 * Missing keys fallback -> default locale -> English

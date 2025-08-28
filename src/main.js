@@ -98,8 +98,12 @@ function createFtpServer({ users, shares, serverConf, logger = console, validate
 				const arg = (info.text || '').split(/\s+/)[1];
 				if (!arg) { connection.reply(501, 'Missing language code'); return; }
 				const lang = arg.toLowerCase();
-				if (MESSAGES[lang]) { connection._locale = lang; connection.reply(200, `Language set to ${lang}`); }
-				else connection.reply(504, 'Language not supported');
+				if (discovered && Array.isArray(discovered) && discovered.includes(lang)) {
+					connection._locale = lang;
+					connection.reply(200, `Language set to ${lang}`);
+				} else {
+					connection.reply(504, 'Language not supported');
+				}
 				return;
 			}
 			if (command === 'FEAT') {

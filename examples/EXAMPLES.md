@@ -65,5 +65,11 @@ Highlights:
 - Data paths in examples are relative; ensure folders exist or will be auto-created.
 - Adjust PASV port ranges to avoid collisions if running multiple examples concurrently.
 - For TLS examples place valid cert/key at configured paths or adapt to existing ones.
- - The folder `examples/config` contains a generic baseline set (`server.json`, `shares.json`, `users.json`) plus an Italian messages file (`messages.it.json`) you can copy and adapt quickly; it's not auto-loaded unless you point env vars to it.
+ - The folder `examples/config` contains a generic baseline set (`server.json`, `shares.json`, `users.json`) plus an Italian messages file (`messages.it.json`).
+   - Only English (`en`) is built-in. To enable Italian (`it`) at runtime, copy the file into your runtime config directory so the i18n loader can discover it:
+     ```bash
+     mkdir -p config
+     cp examples/config/messages.it.json config/
+     ```
+   - Locales are discovered from `./config/messages.<locale>.json` (working directory) or adjacent to the code; they are not loaded from the examples folder automatically.
  - `examples/config/certs/` is intentionally empty (ignored by git). Generate self-signed certs with `npm run generate-cert` (they will be created outside distribution) or place your own there when experimenting.

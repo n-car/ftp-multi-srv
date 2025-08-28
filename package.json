@@ -1,6 +1,6 @@
 {
   "name": "ftp-multi-srv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Configurable multi-share FTP/FTPS server (anonymous + users, per-share permissions, quotas, i18n)",
   "main": "src/main.js",
   "types": "index.d.ts",
